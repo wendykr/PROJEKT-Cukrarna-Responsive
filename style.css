@@ -1,0 +1,329 @@
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+
+/*
+	Poznámky:
+	- maximální šířka obsahu uvnitř sekcí je 1100px
+	- "pruh" s obsahem obsah je vycentrovaný na stránce
+	- všechny sekce mají nahoře a dole padding 80px
+	- kromě hlavičky a patičky, které mají jen 30px
+	- nadpisy jsou fontem Playfair Display, tučně
+	- veškerý další text na stránce fontem Lora
+	- výchozí velikost textu na stránce je 18px, řádkování 1.5
+
+	Velikosti nadpisů:
+	h1 - 52px  (nadpis v horní Hero sekci s cupcakem)
+	h2 - 36px  (nadpisy v dalších sekcích)
+	h3 - 18px  (název produktu v Dnešní nabídce)
+	Nadpisy mají řádkování jen 1.25
+
+	Barvy:
+	#f195b2		růžová - tlačítka a zvýraznění
+	#d2567d		tmavá růžová - hover/aktivní tlačítka
+	#3e606b		tmavá tyrkysová - na nadpisy
+	#242424		(skoro) černá - na běžný text
+	#f0f0f0		světle šedé pozadí prostřední sekce
+	#303339		tmavé pozadí patičky
+*/
+
+
+body {
+	margin: 0;
+	font-family: 'Lora', serif;
+	font-size: 18px;
+	line-height: 1.5;
+	background-color: white;
+	color: #242424;
+}
+
+h1, h2, h3 {
+	font-family: 'Playfair Display', serif;
+	color: #3e606b;
+	font-weight: bold;
+	line-height: 1.25;
+}
+
+section {
+	padding: 80px 0;
+}
+
+.section-inner {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+
+@media screen and (min-width: 640px) {
+	.section-inner {
+		max-width: 580px;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.section-inner {
+		max-width: 1100px;
+	}
+}
+
+.foto-cukrarka, .foto-peceni {
+	display: block;
+}
+
+/* .ramecek {
+	border: 1px dotted red;
+} */
+
+/* ----- HEADER začátek ----- */
+
+.hlavicka {
+	padding: 30px 0;
+	text-align: center;
+}
+
+.logo-firmy {
+	width: 170px;
+}
+
+.odkazy ul {
+	padding: 0;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+
+.odkazy ul li + li {
+	border-top: 1px solid #303339;
+}
+
+.odkazy a {
+	display: block;
+	text-decoration: none;
+	color: #303339;
+	padding: 10px 15px;
+}
+
+.odkazy a:hover {
+	background-color: #f195b2;
+	color: white;
+	padding: 10px 15px;
+}
+
+@media screen and (min-width: 640px) {
+	.odkazy ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	.odkazy ul li + li {
+		border-top: none;
+	}
+
+	.odkazy a:hover {
+		border-radius: 20px;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.hlavicka {
+		padding: 30px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+/* ----- HEADER konec ----- */
+
+/* ----- HERO začátek ----- */
+
+.hero {
+	background-color: white;
+	background-image: url(images/cupcake.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: white;
+}
+
+.obsah-hero {
+	padding-right: 40%;
+}
+
+.hero h1 {
+	font-size: 36px;
+	margin-top: 0;
+	color: white;
+}
+
+.hero p {
+	font-size: 24px;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 640px) {
+	.hero h1 {
+		font-size: 44px;
+	}
+
+	.hero p {
+		font-size: 24px;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.hero h1 {
+		font-size: 52px;
+	}
+
+	.hero p {
+		font-size: 24px;
+	}
+}
+
+/* ----- HERO konec ----- */
+
+/* ----- VÍTEJTE začátek ----- */
+
+.vitejte-levy h2 {
+	margin-top: 0;
+}
+
+.tlacitko {
+	margin-top: 36px;
+	margin-bottom: 36px;
+}
+
+.tlacitko a {
+	border-radius: 30px 30px 30px 30px;
+	padding: 15px 40px;
+	background-color: #f195b2;
+	text-decoration: none;
+	color: white;
+}
+
+.tlacitko a:hover {
+	background-color: #d2567d;
+}
+
+.foto-cukrarka, .foto-peceni {
+	border-radius: 5px;
+	max-width: 75%; 
+	height: auto;
+}
+
+/* @media screen and (min-width: 640px) {
+
+} */
+
+@media screen and (min-width: 960px) {
+	.vitejte, .pristup {
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.vitejte-levy, .vitejte-pravy {
+		flex: 0 1 50%;
+	}
+
+	.tlacitko {
+		margin-bottom: 0;
+	}
+
+	.foto-cukrarka, .foto-peceni {
+		max-width: 100%; 
+		height: auto;
+	}
+}
+
+/* ----- VÍTEJTE konec ----- */
+
+/* ----- DNEŠNÍ NABÍDKA začátek ----- */
+
+.nabidka {
+	background-color: #f0f0f0;
+}
+
+.nabidka h2 {
+	margin-top: 0;
+	font-size: 36px;
+	color: #3e606b;
+}
+
+.foto-produkt {
+	max-width: 100%; 
+	height: auto;
+}
+
+.produkt h3 {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 0;
+}
+
+.produkt .popis {
+	padding: 20px;
+	text-align: center;
+}
+
+.produkt {
+	background-color: white;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	padding-top: 20px;
+}
+
+.produkt + .produkt {
+	border-top: 1px solid #f0f0f0;
+}
+
+@media screen and (min-width: 640px) {
+	.produkty {
+	display: flex;
+	/* gap: 30px; */
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	}
+
+	.produkt {
+	flex: 0 0 calc((100% - 30px) / 2);
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.produkt {
+		flex: 0 0 calc((100% - 30px) / 4);
+	}
+}
+
+/* ----- DNEŠNÍ NABÍDKA konec ----- */
+
+/* ----- PŘÍSTUP K PEČENÍ začátek ----- */
+
+@media screen and (min-width: 960px) {
+	.pristup-levy, .pristup-pravy {
+		flex: 0 1 50%;
+	}
+}
+
+/* ----- PŘÍSTUP K PEČENÍ konec ----- */
+
+/* ----- FOOTER začátek ----- */
+
+.paticka {
+	padding: 30px 0;
+	background-color: #303339;
+}
+
+.obsah-paticka {
+	color: white;
+	text-align: center;
+}
+
+/* ----- FOOTER konec ----- */
+
