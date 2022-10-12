@@ -63,7 +63,10 @@ section {
 
 @media screen and (min-width: 960px) {
 	.section-inner {
-		max-width: 1100px;
+		max-width: 1140px;
+		padding-left: 40px;
+		padding-right: 40px;
+		/* padding: 80px 40px; */
 	}
 }
 
@@ -126,7 +129,7 @@ section {
 
 @media screen and (min-width: 960px) {
 	.hlavicka {
-		padding: 30px 0;
+		padding: 30px 40px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -196,6 +199,7 @@ section {
 }
 
 .tlacitko a {
+	display: inline-block;
 	border-radius: 30px 30px 30px 30px;
 	padding: 15px 40px;
 	background-color: #f195b2;
@@ -209,7 +213,7 @@ section {
 
 .foto-cukrarka, .foto-peceni {
 	border-radius: 5px;
-	max-width: 75%; 
+	max-width: 100%; 
 	height: auto;
 }
 
@@ -233,10 +237,10 @@ section {
 		margin-bottom: 0;
 	}
 
-	.foto-cukrarka, .foto-peceni {
+	/* .foto-cukrarka, .foto-peceni {
 		max-width: 100%; 
 		height: auto;
-	}
+	} */
 }
 
 /* ----- VÍTEJTE konec ----- */
@@ -274,30 +278,36 @@ section {
 	border-radius: 5px 5px 5px 5px;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 	text-align: center;
-	padding-top: 20px;
 }
 
 .produkt + .produkt {
 	border-top: 1px solid #f0f0f0;
+	margin-top: 20px;
 }
 
 @media screen and (min-width: 640px) {
 	.produkty {
-	display: flex;
-	/* gap: 30px; */
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 
 	.produkt {
-	flex: 0 0 calc((100% - 30px) / 2);
+		/* flex: 0 0 calc((100% - 30px) / 2); */
+		flex: 0 0 calc(50% - 30px);
+	}
+
+	.produkt + .produkt {
+		margin-top: 0;
 	}
 }
 
 @media screen and (min-width: 960px) {
 	.produkt {
-		flex: 0 0 calc((100% - 30px) / 4);
+		/* flex: 0 0 calc((100% - 30px) / 4); */
+		flex: 0 0 calc(25% - 30px);
 	}
 }
 
